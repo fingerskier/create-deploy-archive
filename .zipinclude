@@ -1,0 +1,10 @@
+.env
+*.js
+*.pem
+config.json
+package.json
+package-lock.json
+.platform/
+app/build/
+src/
+public/
