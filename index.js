@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import fs from 'fs'
 import path from 'path'
 import archiver from 'archiver'
@@ -17,7 +19,7 @@ const outputZipPath = path.resolve(outputZipName)
 function readWhitelistFile() {
   // Read the whitelist file (.zipinclude)
   const whitelistPath = path.resolve('.zipinclude')
-
+  
   if (!fs.existsSync(whitelistPath)) {
     console.error('.zipinclude FILE NOT FOUND.')
     process.exit(1)
@@ -72,7 +74,6 @@ async function getFilesToInclude(patterns) {
     
     try {
       await fse.copy(absoluteFilePath, destPath)
-      // console.log(`Copied ${absoluteFilePath} to ${destPath}`)
     } catch (err) {
       console.error(`Error copying ${absoluteFilePath} to ${destPath}:`, err)
     }
