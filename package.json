@@ -1,6 +1,6 @@
 {
   "name": "create-deploy-archive",
-  "version": "1.0.0",
+  "version": "2025.1.28",
   "description": "NodeJS script to create a deployable zip archive from it's containing directory",
   "main": "index.js",
   "type": "module",
