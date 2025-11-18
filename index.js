@@ -21,7 +21,21 @@ function readWhitelistFile() {
   const whitelistPath = path.resolve('.zipinclude')
   
   if (!fs.existsSync(whitelistPath)) {
-    console.error('.zipinclude FILE NOT FOUND.')
+    console.error('ERROR: .zipinclude file not found!')
+    console.error('')
+    console.error('The .zipinclude file is required to specify which files to include in the archive.')
+    console.error('')
+    console.error('Create a .zipinclude file in the root of your project with file patterns, for example:')
+    console.error('')
+    console.error('  *.js')
+    console.error('  *.json')
+    console.error('  *.pem')
+    console.error('  config.json')
+    console.error('  .platform/')
+    console.error('  src/')
+    console.error('')
+    console.error('For more information, see: https://github.com/fingerskier/create-deploy-archive#readme')
+    console.error('')
     process.exit(1)
   }
   
